@@ -2,7 +2,7 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
-console.log("Haj Najeeb");
+console.log("Ahmad");console.log("Haj Najeeb");
 const errorController = require('./controllers/error');
 const sequelize = require('./util/database');
 const Product = require('./models/product');
