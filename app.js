@@ -3,14 +3,14 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const errorController = require('./controllers/error');
-const mongodbConnect = require('./util/database');
+const mongodbConnect = require('./util/database').mongodbConnect;
 
 const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
-// const adminRoutes = require('./routes/admin');
+const adminRoutes = require('./routes/admin');
 // const shopRoutes = require('./routes/shop');
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -23,14 +23,14 @@ app.use((req, res, next) => {
   //     next();
   //   })
   //   .catch(err => console.log(err));
+  next();
 });
 
-// app.use('/admin', adminRoutes);
+app.use('/admin', adminRoutes);
 // app.use(shopRoutes);
 
 // app.use(errorController.get404);
 
-mongodbConnect(client =>{
-  console.log(client);
+mongodbConnect(() =>{
   app.listen(3000);
 })
