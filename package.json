@@ -15,9 +15,11 @@
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "dotenv": "^16.4.7",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
+    "mongodb": "^6.13.0",
     "mysql2": "^3.11.2",
     "nodejs-complete-guide": "file:",
     "pug": "^2.0.3",
