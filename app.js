@@ -32,4 +32,5 @@ app.use(errorController.get404);
 
 mongoConnect(() =>{
   app.listen(2025);
+  console.log(`http://localhost:2025`)
 })
